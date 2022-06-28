@@ -26,7 +26,7 @@ const getXAxis = (x) => {
 }
 
 
-const pointer = (x, y) => {
+const pointer = (x, y, color) => {
     const yAxis = getYAxis(y)
     const xAxis = getXAxis(x)
     return (
@@ -35,10 +35,11 @@ const pointer = (x, y) => {
             left: `${xAxis}px`,
             height: 50
         }}>
-            <div className='w-[20px] h-[20px] mt-[5px] rounded-[50%] bg-[#0b2760]' />
+            <div className='w-[20px] h-[20px] mt-[5px] rounded-[50%] bg-[#0b2760] border-[2px] border-[#fff]'
+                 style={{ backgroundColor: `${color}` }}/>
             <div className='flex flex-col items-start'>
-                <span className='font-bold text-[#0b2760]'>TEXT</span>
-                <span className='text-[18px] text-[#7a7a7a]'>{y}/{x} mmHg</span>
+                <span className='font-bold text-[#0b2760]'></span>
+                {/*<span className='text-[18px] text-[#7a7a7a]'>{y}/{x} mmHg</span>*/}
             </div>
         </div>
     )
@@ -79,7 +80,10 @@ function App() {
                     <span className='absolute right-[-20px] bottom-[-20px] text-[#aaaaaa]'>mmHg</span>
                     <span className='absolute left-[10px] text-[12px]'>TEXT</span>
                 </div>
-                {pointer(88,145 )}
+                {pointer(88,145, 'red' )}
+                {pointer(110,120, 'blue' )}
+                {pointer(105,135, 'green' )}
+                {pointer(95,120, 'yellow' )}
             </div>
         </div>
     </div>
