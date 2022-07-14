@@ -1,91 +1,88 @@
 import './App.css';
 
-const getYAxis = (y) => {
-    // y axis
-    // 121 > 180 : 180px
-    // 0 > 120: 30px
-    // 35 = 50 - 5 - 10, 50 là chiều cao của div pointer, 5 là margin top, 10 là nửa chiều cao pointer
-     if (y <= 120) {
-         if (y <=100) {
-             return -25
-         }
-         return 30/120 * y - 35
-     }
-     return 30 + 180/60 * (y - 120) - 35
-}
-
-const getXAxis = (x) => {
-    // x axis
-    // 81 > 110 : 240px
-    // 0 > 80: 80px
-    // 10 là nửa chiều rộng pointer
-    if (x <= 80) {
-        return 80/80 * x - 10
-    }
-    return 80 + 240/30 * (x - 80) - 10
-}
-
-
-const pointer = (x, y, color) => {
-    const yAxis = getYAxis(y)
-    const xAxis = getXAxis(x)
-    return (
-        <div className='z-[11] absolute pointer flex gap-[10px]' style={{
-            bottom: `${yAxis}px`,
-            left: `${xAxis}px`,
-            height: 50
-        }}>
-            <div className='w-[20px] h-[20px] mt-[5px] rounded-[50%] bg-[#0b2760] border-[2px] border-[#fff]'
-                 style={{ backgroundColor: `${color}` }}/>
-            <div className='flex flex-col items-start'>
-                <span className='font-bold text-[#0b2760]'></span>
-                {/*<span className='text-[18px] text-[#7a7a7a]'>{y}/{x} mmHg</span>*/}
-            </div>
-        </div>
-    )
-}
-
 function App() {
   return (
     <div className="App">
-        <div className='flex pt-[15%] pl-[10%] w-[1024px] mx-auto h-screen bg-[#e4e4e4]'>
-            <div className='w-[500px] h-[300px] relative'>
-                <div className='z-[10] absolute left-0 bottom-0 h-[30px] w-[80px] bg-[#a9ddee] border border-dashed border-[#fff]'>
-                    <span className='absolute left-[-30px] top-[-10px] text-[#aaaaaa]'>120</span>
-                    <span className='absolute right-[-10px] bottom-[-20px] text-[#aaaaaa]'>80</span>
-                    <span className='absolute left-[10px] text-[12px]'>TEXT</span>
+        <section className='header'>
+            <div className="banner"/>
+            <h1 className='text-[72px] text-center py-[20px]'>CÀN KHÔN</h1>
+        </section>
+        <section className='body bg-[#f1f1f1]'>
+            <div className='flex'>
+                <div className='py-[150px] px-[20px] xl:px-[150px] w-1/2'>
+                    <h2 className='text-left text-[40px] pb-[10px]'>VỀ CHÚNG TÔI</h2>
+                    <div className='text-left text-[18px] leading-[32px]'>
+                        <p>Ứng dụng chia sẻ nội dung, kết nối bạn bè bốn phương.</p>
+                        <p>- Cộng đồng</p>
+                        <p>Đăng tải, tìm kiếm những kiến thức, những thắc mắc mà bạn muốn tìm ra câu trả lời.</p>
+                        <p>Đóng góp kiến thức bằng việc trả lời những câu hỏi.</p>
+                        <p>- Kết nối:</p>
+                        <p>Kết nối, giao lưu với những người bạn từ khắp mọi nơi.</p>
+                        <p>Video call, chat dễ dàng</p>
+                        <p className='mt-[20px]'>Còn chờ gì nữa, tham gia ngay nào !</p>
+                    </div>
+                    <div id="comp-l5gfk7xh" className="mt-[20px]">
+                        <a
+                           href="https://play.google.com/store/apps/details?id=com.learn.cankhon" target="_blank"
+                           rel="noreferrer noopener" className="xQ_iF">
+                        <img src="https://static.wixstatic.com/media/21a5ea_cc46cc7ec27a455baea915d3a9bac2e8~mv2.png/v1/fill/w_766,h_296,al_c,lg_1,q_85,enc_auto/21a5ea_cc46cc7ec27a455baea915d3a9bac2e8~mv2.png" alt="" style={{width: 383, height: 148, objectFit: 'cover', objectPosition: '50% 50%'}} />
+                        </a>
+                        </div>
                 </div>
-                <div className='z-[9] absolute left-0 bottom-0 h-[60px] w-[120px] bg-[#50d5f9] border border-dashed border-[#fff]'>
-                    <span className='absolute left-[-30px] top-[-10px] text-[#aaaaaa]'>130</span>
-                    <span className='absolute right-[-10px] bottom-[-20px] text-[#aaaaaa]'>85</span>
-                    <span className='absolute left-[10px] text-[12px]'>TEXT</span>
+                <div className='w-1/2'>
+                    <img src="https://static.wixstatic.com/media/11062b_0e28dc60acb34648b315bff732553f1a~mv2.jpg/v1/fill/w_1680,h_1586,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/11062b_0e28dc60acb34648b315bff732553f1a~mv2.jpg" alt="Nhóm sinh viên Châu Á thảo luận trong thư viện" style={{width: 840, height: 793, objectFit: 'cover', objectPosition: '50% 50%'}} />
                 </div>
-                <div className='z-[8] absolute left-0 bottom-0 h-[90px] w-[160px] bg-[#eee97c] border border-dashed border-[#fff]'>
-                    <span className='absolute left-[-30px] top-[-10px] text-[#aaaaaa]'>140</span>
-                    <span className='absolute right-[-10px] bottom-[-20px] text-[#aaaaaa]'>90</span>
-                    <span className='absolute left-[10px] text-[12px]'>TEXT</span>
-                </div>
-                <div className='z-[7] absolute left-0 bottom-0 h-[150px] w-[240px] bg-[#f6cfe8] border border-dashed border-[#fff]'>
-                    <span className='absolute left-[-30px] top-[-10px] text-[#aaaaaa]'>160</span>
-                    <span className='absolute right-[-10px] bottom-[-20px] text-[#aaaaaa]'>100</span>
-                    <span className='absolute left-[10px] text-[12px]'>TEXT</span>
-                </div>
-                <div className='z-[6] absolute left-0 bottom-0 h-[210px] w-[320px] bg-[#f69292] border border-dashed border-[#fff]'>
-                    <span className='absolute left-[-30px] top-[-10px] text-[#aaaaaa]'>180</span>
-                    <span className='absolute right-[-10px] bottom-[-20px] text-[#aaaaaa]'>110</span>
-                    <span className='absolute left-[10px] text-[12px]'>TEXT</span>
-                </div>
-                <div className='z-[5] absolute left-0 bottom-0 h-[270px] w-[400px] bg-[#fe73b8] border border-dashed border-[#fff]'>
-                    <span className='absolute left-[-50px] top-[-10px] text-[#aaaaaa]'>mmHg</span>
-                    <span className='absolute right-[-20px] bottom-[-20px] text-[#aaaaaa]'>mmHg</span>
-                    <span className='absolute left-[10px] text-[12px]'>TEXT</span>
-                </div>
-                {pointer(88,145, 'red' )}
-                {pointer(110,120, 'blue' )}
-                {pointer(105,135, 'green' )}
-                {pointer(95,120, 'yellow' )}
             </div>
-        </div>
+            <div className='py-[80px]'>
+                <h3 className='text-[22px]'>"Big results require big ambitions"</h3>
+                    <h4 className='mt-[10px] font-[500]'>Heraclitus</h4>
+            </div>
+        </section>
+        <section className='contact'>
+            <div className='w-[1060px] mx-auto py-[120px]'>
+                <div className='flex'>
+                    <div className='w-1/2 text-left px-[15px]'>
+                        <h3 className='text-[40px]'>LIÊN HỆ CHÚNG TÔI</h3>
+                        <div>
+                            <p className='mt-[5px]'>TAM PHUC CO. LTD</p>
+                            <p className='mt-[10px]'>Xóm 9, thôn Ngọc Chi, Xã Vĩnh Ngọc, Huyện Đông Anh, Thành phố Hà Nội</p>
+                            <p className='py-[20px]'>sugiacankhon@cankhon.vn</p>
+                            <p>093-4687-930</p>
+                        </div>
+                    </div>
+                    <div className='w-1/2'>
+                        <div className='flex gap-[8px]'>
+                            <input type="text" className='w-1/2' placeholder='Tên'/>
+                            <input type="text" className='w-1/2' placeholder='Email'/>
+                        </div>
+                        <div className='flex gap-[8px] mt-[10px]'>
+                            <input type="text" className='w-1/2' placeholder='Điện thoại'/>
+                            <input type="text" className='w-1/2' placeholder='Địa chỉ'/>
+                        </div>
+                        <div className='flex mt-[10px]'>
+                            <input type="text" className='w-full' placeholder='Tiêu đề'/>
+                        </div>
+                        <div className='flex mt-[10px] w-full'>
+                            <textarea className='w-full' placeholder='Nhập tin nhắn của bạn ở đây...'/>
+                        </div>
+                        <div className='flex mt-[16px] w-full'>
+                            <button className='w-full text-center py-[12px] bg-[#000] text-white hover:opacity-[0.6]'>Gửi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className='footer'>
+            <div className='flex flex-col text-center py-[20px] bg-[#e1eff2]'>
+                <div>
+                    TAM PHUC EDUCATION SUPPORT AND TRADING COMPANY LIMITED
+                </div>
+                <div className='mt-[20px]'>
+                    <p>Ngày hoạt động: 31/08/2020</p>
+                    <p>Giấy phép kinh doanh: 0109324940</p>
+                </div>
+            </div>
+        </section>
     </div>
   );
 }
