@@ -8,8 +8,8 @@ function App() {
             <h1 className='text-[72px] text-center py-[20px]'>CÀN KHÔN</h1>
         </section>
         <section className='body bg-[#f1f1f1]'>
-            <div className='flex'>
-                <div className='py-[150px] px-[20px] xl:px-[150px] w-1/2'>
+            <div className='flex flex-col sm:flex-row'>
+                <div className='py-[150px] px-[20px] xl:px-[150px] w-full sm:w-1/2'>
                     <h2 className='text-left text-[40px] pb-[10px]'>VỀ CHÚNG TÔI</h2>
                     <div className='text-left text-[18px] leading-[32px]'>
                         <p>Ứng dụng chia sẻ nội dung, kết nối bạn bè bốn phương.</p>
@@ -29,7 +29,7 @@ function App() {
                         </a>
                         </div>
                 </div>
-                <div className='w-1/2'>
+                <div className='w-full sm:w-1/2'>
                     <img src="https://static.wixstatic.com/media/11062b_0e28dc60acb34648b315bff732553f1a~mv2.jpg/v1/fill/w_1680,h_1586,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/11062b_0e28dc60acb34648b315bff732553f1a~mv2.jpg" alt="Nhóm sinh viên Châu Á thảo luận trong thư viện" style={{width: 840, height: 793, objectFit: 'cover', objectPosition: '50% 50%'}} />
                 </div>
             </div>
@@ -40,8 +40,8 @@ function App() {
         </section>
         <section className='contact'>
             <div className='w-[1060px] mx-auto py-[120px]'>
-                <div className='flex'>
-                    <div className='w-1/2 text-left px-[15px]'>
+                <div className='flex flex-col sm:flex-row'>
+                    <div className='w-1/2 text-left px-[20px] sm:px-[15px]'>
                         <h3 className='text-[40px]'>LIÊN HỆ CHÚNG TÔI</h3>
                         <div>
                             <p className='mt-[5px]'>TAM PHUC CO. LTD</p>
@@ -50,7 +50,7 @@ function App() {
                             <p>093-4687-930</p>
                         </div>
                     </div>
-                    <div className='w-1/2'>
+                    <div className='w-1/2 mt-[20px] sm:mt-[0] px-[20px] sm:px-[0]'>
                         <div className='flex gap-[8px]'>
                             <input type="text" className='w-1/2' placeholder='Tên'/>
                             <input type="text" className='w-1/2' placeholder='Email'/>
