@@ -29,6 +29,6 @@
 .banner {
   width: 100%;
   height: 457px;
-  background: url("/src/img/banner.png") 50% center / cover no-repeat;
+  background: url("https://static.wixstatic.com/media/21a5ea_267c8310d0704ad8b01330b56b2c8dc9~mv2.png/v1/fill/w_3360,h_1640,al_c,q_90,usm_0.66_1.00_0.01/21a5ea_267c8310d0704ad8b01330b56b2c8dc9~mv2.png") 50% center / cover no-repeat;
 }
 
