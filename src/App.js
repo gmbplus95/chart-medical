@@ -1,12 +1,14 @@
 import './App.css';
+import React from "react";
+import Header from "./layout/Header";
+import MainLayout from "./layout/MainLayout";
 
 function App() {
   return (
-    <div className="App">
-        <section className='header'>
-            <div className="banner"/>
+    <MainLayout>
+        <Header>
             <h1 className='text-[72px] text-center py-[20px]'>CÀN KHÔN</h1>
-        </section>
+        </Header>
         <section className='body bg-[#f1f1f1]'>
             <div className='flex flex-col sm:flex-row'>
                 <div className='py-[150px] px-[20px] xl:px-[150px] w-full sm:w-1/2'>
@@ -44,8 +46,8 @@ function App() {
                     <div className='w-1/2 text-left px-[20px] sm:px-[15px]'>
                         <h3 className='text-[40px]'>LIÊN HỆ CHÚNG TÔI</h3>
                         <div>
-                            <p className='mt-[5px]'>TAM PHUC CO. LTD</p>
-                            <p className='mt-[10px]'>Xóm 9, thôn Ngọc Chi, Xã Vĩnh Ngọc, Huyện Đông Anh, Thành phố Hà Nội</p>
+                            <p className='mt-[5px]'>CUBEE SOFTWARE COMPANY LIMITED</p>
+                            <p className='mt-[10px]'>Số 43, đường Xuân Canh, xã Xuân Canh, Huyện Đông Anh, Thành phố Hà Nội</p>
                             <p className='py-[20px]'>sugiacankhon@cankhon.vn</p>
                             <p>093-4687-930</p>
                         </div>
@@ -75,15 +77,15 @@ function App() {
         <section className='footer'>
             <div className='flex flex-col text-center py-[20px] bg-[#e1eff2]'>
                 <div>
-                    TAM PHUC EDUCATION SUPPORT AND TRADING COMPANY LIMITED
+                    CUBEE SOFTWARE COMPANY LIMITED
                 </div>
                 <div className='mt-[20px]'>
-                    <p>Ngày hoạt động: 31/08/2020</p>
-                    <p>Giấy phép kinh doanh: 0109324940</p>
+                    <p>Ngày hoạt động: 26/07/2022</p>
+                    <p>Giấy phép kinh doanh: 0110071959</p>
                 </div>
             </div>
         </section>
-    </div>
+    </MainLayout>
   );
 }
 
