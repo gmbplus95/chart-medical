@@ -117,6 +117,9 @@ const Privacy = () => {
                     <p>
                         I value your trust in providing us with your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
                     </p>
+                    <p>
+                        We use contacts access for account sync functionality. This function is completely performed under the application, does not save any contact information on the server, so you can be assured of privacy.
+                    </p>
                 </div>
             </section>
 
@@ -158,7 +161,7 @@ const Privacy = () => {
 
             <section className='text-left px-[20px] py-[20px]'>
                 <div className='text-[40px] font-[500]'>
-                    Contact Us
+                    Contact Us
                 </div>
                 <div className='py-[20px] leading-[28px] font-[32px]'>
                     <div>
